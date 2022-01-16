@@ -3,6 +3,7 @@ import Text from "../../atoms/Text";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
 import HomeUpperAreaProps from "./types";
+import { GiFire } from "react-icons/gi";
 
 const HomeUpperArea = ({}: HomeUpperAreaProps) => {
   const [trendingCoins, setTrendingCoins] = useState<any>([]);
@@ -12,7 +13,6 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
     api
       .get("/search/trending")
       .then((response) => {
-        console.log(response.data);
         setTrendingCoins(response.data.coins);
       })
       .catch((err) => {
@@ -22,7 +22,7 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
 
   useEffect(() => {
     api
-      .get("/simple/supported_vs_currencies")
+      .get("/coins/markets")
       .then((response) => {
         console.log(response);
         setPrice(response.data);
@@ -37,7 +37,10 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
       <S.TopContainer>
         <Text type={"subtitle"}>{"2.0.0"}</Text>
         <S.TrendingContainer>
-          <Text type={"title"}>{"Trending"}</Text>
+          <S.TrendingIconContainer>
+            <Text type={"title"}>{"Trending"}</Text>
+            <GiFire size={30} color={"yellow"} />
+          </S.TrendingIconContainer>
           <S.TrendingCoinsContainer>
             {trendingCoins &&
               trendingCoins.map((crypto: any) => (
@@ -56,7 +59,7 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
                   </S.TrendingName>
                   <S.TrendingPrice>
                     <Text type={"paragraph_text"}>
-                      {` BTC ${crypto.item.price_btc.toFixed(17)}`}
+                      {` BTC ${crypto.item.price_btc.toFixed(15)}`}
                     </Text>
                   </S.TrendingPrice>
                 </S.TrendingCoinsContent>

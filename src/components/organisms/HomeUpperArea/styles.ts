@@ -18,6 +18,10 @@ const TrendingContainer = styled.div`
   align-items: inherit;
 `;
 
+const TrendingIconContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
 const TrendingCoinsContainer = styled.div`
   background-color: ${colors.dark};
   border-top: 0.3px solid white;
@@ -56,6 +60,7 @@ const S = {
   TrendingPrice,
   TrendingSymbol,
   TrendingName,
+  TrendingIconContainer,
 };
 
 export default S;
