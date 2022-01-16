@@ -13,7 +13,7 @@ const Text = ({ type, children }: TextProps) => {
       case "footer":
         return <S.FooterText>{children}</S.FooterText>;
       case "paragraph_text":
-        return <S.CoinPriceLabel>{children}</S.CoinPriceLabel>;
+        return <S.ParagraphLabelText>{children}</S.ParagraphLabelText>;
     }
   };
   return selectType();
