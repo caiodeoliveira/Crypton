@@ -35,18 +35,17 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
   return (
     <>
       <S.TopContainer>
-        <Text type={"subtitle"}>{"2.0.0"}</Text>
         <S.TrendingContainer>
-          <S.TrendingIconContainer>
-            <Text type={"title"}>{"Trending"}</Text>
-            <GiFire size={30} color={"yellow"} />
-          </S.TrendingIconContainer>
+          <Text type={"input_label"}>
+            {"Trending"} {<GiFire size={30} color={"yellow"} />}
+          </Text>
+          <Text type={"input_label"}>{"2 . 0 . 0"}</Text>
           <S.TrendingCoinsContainer>
             {trendingCoins &&
               trendingCoins.map((crypto: any) => (
                 <S.TrendingCoinsContent>
                   <S.TrendingCoins
-                    src={crypto.item.small}
+                    src={crypto.item.thumb}
                     alt="trending cryptos"
                   />
                   <S.TrendingSymbol>
@@ -59,7 +58,7 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
                   </S.TrendingName>
                   <S.TrendingPrice>
                     <Text type={"paragraph_text"}>
-                      {` BTC ${crypto.item.price_btc.toFixed(15)}`}
+                      {` BTC ${crypto.item.price_btc.toFixed(20)}`}
                     </Text>
                   </S.TrendingPrice>
                 </S.TrendingCoinsContent>

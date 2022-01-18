@@ -8,17 +8,16 @@ const TitleText = styled.div`
 `;
 
 const SubTitleText = styled.div`
-  font-size: ${typography.subTitle};
+  font-size: ${typography.modal_title};
   font-weight: ${fonts.montserrat.normal};
   color: ${colors.body};
-  margin-top: 179px;
 
   @media only screen and (max-width: 640px) {
     font-size: 25px;
   }
 `;
 const InputLabelText = styled.div`
-  font-size: ${typography.modal_subtitle};
+  font-size: ${typography.subTitle};
   font-weight: ${fonts.montserrat.normal};
   color: ${colors.body};
 `;
