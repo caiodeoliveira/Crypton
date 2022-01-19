@@ -25,4 +25,5 @@ yarn.lock
 package.json
 package-lock.json
 
+/Task.txt
 # assets:
