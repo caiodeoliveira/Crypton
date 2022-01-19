@@ -8,8 +8,17 @@ const Container = styled.div`
   align-items: center;
 `;
 
+const CryptoListContainer = styled.div`
+  width: 90%;
+  height: 70%;
+  background-color: black;
+  border: 3px solid grey;
+  border-radius: 5px;
+`;
+
 const S = {
   Container,
+  CryptoListContainer,
 };
 
 export default S;
