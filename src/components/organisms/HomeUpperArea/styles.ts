@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/mixins";
+import sp_background from "../../../assets/sp_background.jpg";
 
 const TopContainer = styled.div`
   background-color: ${colors.dark};
@@ -18,10 +19,10 @@ const TrendingContainer = styled.div`
 `;
 
 const TrendingCoinsContainer = styled.div`
-  background-color: ${colors.dark};
+  background: url(${sp_background});
   border-top: 0.3px solid white;
   border-bottom: 0.3px solid white;
-  border-radius: 0 5px 0 5px;
+  border-radius: 5px 5px 5px 5px;
   display: flex;
   width: 100%;
   height: 24%;

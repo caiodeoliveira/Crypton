@@ -9,9 +9,9 @@ const Container = styled.div`
 `;
 
 const CryptoListContainer = styled.div`
-  width: 90%;
+  margin-top: 5px;
+  width: 100%;
   height: 70%;
-  background-color: black;
   border: 3px solid grey;
   border-radius: 5px;
 `;
