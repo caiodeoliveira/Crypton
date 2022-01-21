@@ -6,9 +6,7 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
   return (
     <>
       <S.Container>
-        <S.CryptoListContainer>
-          <p>Text</p>
-        </S.CryptoListContainer>
+        <S.CryptoListContainer></S.CryptoListContainer>
       </S.Container>
       <Footer />
     </>

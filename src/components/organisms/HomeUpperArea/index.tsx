@@ -3,7 +3,8 @@ import Text from "../../atoms/Text";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
 import HomeUpperAreaProps from "./types";
-import { GiFire } from "react-icons/gi";
+import { GiSpaceship } from "react-icons/gi";
+import { RiSpaceShipLine } from "react-icons/ri";
 
 const HomeUpperArea = ({}: HomeUpperAreaProps) => {
   const [trendingCoins, setTrendingCoins] = useState<any>([]);
@@ -36,9 +37,8 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
     <>
       <S.TopContainer>
         <S.TrendingContainer>
-          <Text type={"input_label"}>
-            {"Trending"} {<GiFire size={30} color={"yellow"} />}
-          </Text>
+          <Text type={"input_label"}>{"Trending"}</Text>
+          {<RiSpaceShipLine size={30} color={"yellow"} />}
           <Text type={"input_label"}>{"2 . 0 . 0"}</Text>
           <S.TrendingCoinsContainer>
             {trendingCoins &&
