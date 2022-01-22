@@ -21,18 +21,6 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
       });
   }, []);
 
-  useEffect(() => {
-    api
-      .get("/coins/markets")
-      .then((response) => {
-        console.log(response);
-        setPrice(response.data);
-      })
-      .catch((err) => {
-        console.log("Ocorreu um erro na requisição !:" + err);
-      });
-  }, []);
-
   return (
     <>
       <S.TopContainer>

@@ -5,9 +5,6 @@ import sp_background from "../../../assets/sp_background.jpg";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: black;
-  background-repeat: no-repeat;
-  /* background-size: contain; */
   text-align: center;
   opacity: 0.9;
 `;
