@@ -20,6 +20,7 @@ const TrendingContainer = styled.div`
 
 const TrendingCoinsContainer = styled.div`
   background: url(${sp_background});
+  background-repeat: no-repeat;
   border-top: 0.3px solid white;
   border-bottom: 0.3px solid white;
   border-radius: 5px 5px 5px 5px;
@@ -43,7 +44,9 @@ const TrendingCoins = styled.img``;
 
 const TrendingName = styled.p``;
 
-const TrendingSymbol = styled.p``;
+const TrendingSymbol = styled.p`
+  webkit-font-smoothing: antialiased;
+`;
 
 const TrendingPrice = styled.p``;
 
