@@ -14,11 +14,15 @@ const CryptoListContainer = styled.div`
   width: 100%;
   height: 70%;
   background: url(${sp_background});
-  filter: brightness(70%);
+  filter: brightness(50%);
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 `;
 
-const Crypto = styled.img``;
+const Crypto = styled.img`
+  width: 40px;
+`;
 
 const S = {
   Container,
