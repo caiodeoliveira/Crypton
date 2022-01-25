@@ -8,12 +8,16 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
   const [allCoins, setAllCoins] = useState<any>([]);
 
   useEffect(() => {
-    api.get("/search?query=bitcoin").then((response) => {
-      setAllCoins(response.data.coins);
-      console.log(response.data);
-      // const cash = allCoins.map((coins: any) => coins.symbol);
-      // console.log(cash);
-    });
+    api
+      .get(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20"
+      )
+      .then((response) => {
+        setAllCoins(response.data);
+        console.log(response.data);
+        // const cash = allCoins.map((coins: any) => coins.symbol);
+        // console.log(cash);
+      });
   }, []);
 
   return (
@@ -21,7 +25,7 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
       <S.Container>
         <S.CryptoListContainer>
           {allCoins.map((coins: any) => (
-            <S.Crypto src={coins.thumb} alt={allCoins.id} />
+            <S.Crypto src={coins.image} alt={allCoins.id} />
           ))}
         </S.CryptoListContainer>
       </S.Container>
