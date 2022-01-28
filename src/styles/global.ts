@@ -30,7 +30,6 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
     .MuiDrawer-paperAnchorDockedLeft {
     border-right: none !important;
     }
@@ -41,12 +40,12 @@ export default createGlobalStyle`
     &::-webkit-scrollbar {
         width: 16px;
         border-radius: 5px;
-        background: #fff;
+        background: black;
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: ${colors.primary};
-        border:4px solid #fff;
+        border:4px solid black;
     }
   }
   body {

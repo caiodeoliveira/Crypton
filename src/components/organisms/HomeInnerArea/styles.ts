@@ -10,15 +10,18 @@ const Container = styled.div`
 `;
 
 const CryptoListContainer = styled.div`
-  margin-top: 5px;
-  width: 100%;
-  height: 70%;
   background: url(${sp_background});
   filter: brightness(50%);
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  margin-top: 1px;
+  overflow: auto;
 `;
+
+const CryptoListContent = styled.div``;
 
 const Crypto = styled.img`
   width: 40px;
@@ -27,6 +30,7 @@ const Crypto = styled.img`
 const S = {
   Container,
   CryptoListContainer,
+  CryptoListContent,
   Crypto,
 };
 
