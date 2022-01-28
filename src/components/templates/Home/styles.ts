@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { colors, typography, fonts } from "../../../styles/mixins";
-import sp_background from "../../../assets/sp_background.jpg";
 
 const Container = styled.div`
   width: 100vw;
