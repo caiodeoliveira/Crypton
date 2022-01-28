@@ -24,11 +24,11 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
     <>
       <S.Container>
         <S.CryptoListContainer>
-          {allCoins.map((coins: any) => (
-            <S.CryptoListContent>
+          <S.CryptoListContent>
+            {allCoins.map((coins: any) => (
               <S.Crypto src={coins.image} alt={allCoins.id} />
-            </S.CryptoListContent>
-          ))}
+            ))}
+          </S.CryptoListContent>
         </S.CryptoListContainer>
       </S.Container>
       <Footer />
