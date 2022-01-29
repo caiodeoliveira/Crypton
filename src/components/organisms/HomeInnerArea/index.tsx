@@ -15,8 +15,6 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
       .then((response) => {
         setAllCoins(response.data);
         console.log(response.data);
-        // const cash = allCoins.map((coins: any) => coins.symbol);
-        // console.log(cash);
       });
   }, []);
 
@@ -24,11 +22,14 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
     <>
       <S.Container>
         <S.CryptoListContainer>
-          <S.CryptoListContent>
-            {allCoins.map((coins: any) => (
+          {allCoins.map((coins: any) => (
+            <S.CryptoListContent>
               <S.Crypto src={coins.image} alt={allCoins.id} />
-            ))}
-          </S.CryptoListContent>
+              <S.CryptoSymbol style={{ color: "white" }}>
+                ( {coins.symbol} )
+              </S.CryptoSymbol>
+            </S.CryptoListContent>
+          ))}
         </S.CryptoListContainer>
       </S.Container>
       <Footer />
