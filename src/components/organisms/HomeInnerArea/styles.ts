@@ -7,25 +7,36 @@ const Container = styled.div`
 `;
 
 const CryptoListContainer = styled.div`
-  background: url(${sp_background});
-  filter: brightness(50%);
+  background: url(${sp_background}) no-repeat;
   width: 100%;
   height: 100%;
   border-radius: 5px;
   margin-top: 1px;
+  display: flex;
+  flex-direction: column;
 `;
 
-const CryptoListContent = styled.div``;
+const CryptoListContent = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
 
 const Crypto = styled.img`
   width: 40px;
 `;
+const CryptoSymbol = styled.p``;
 
+const CryptoPrice = styled.p``;
 const S = {
   Container,
   CryptoListContainer,
   CryptoListContent,
   Crypto,
+  CryptoSymbol,
+  CryptoPrice,
 };
 
 export default S;
