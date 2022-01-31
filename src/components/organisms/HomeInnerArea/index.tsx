@@ -21,16 +21,21 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
   return (
     <>
       <S.Container>
-        <S.CryptoListContainer>
-          {allCoins.map((coins: any) => (
-            <S.CryptoListContent>
-              <S.Crypto src={coins.image} alt={allCoins.id} />
-              <S.CryptoSymbol style={{ color: "white" }}>
-                ( {coins.symbol} )
-              </S.CryptoSymbol>
-            </S.CryptoListContent>
-          ))}
-        </S.CryptoListContainer>
+        <S.TableCrypto>
+          <S.TableHeaderCrypto>
+            <S.CryptoListContainer>
+              {allCoins.map((coins: any) => (
+                <S.CryptoListContent>
+                  <S.Crypto src={coins.image} alt={allCoins.id} />
+                  <S.CryptoSymbol>( {coins.symbol} )</S.CryptoSymbol>
+                  <S.CryptoPrice>
+                    {coins.current_price.toFixed(2)} USD
+                  </S.CryptoPrice>
+                </S.CryptoListContent>
+              ))}
+            </S.CryptoListContainer>
+          </S.TableHeaderCrypto>
+        </S.TableCrypto>
       </S.Container>
       <Footer />
     </>
