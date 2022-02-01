@@ -5,7 +5,7 @@ import api from "../../../services/api/index";
 import { useEffect, useState } from "react";
 
 const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
-  const [allCoins, setAllCoins] = useState<any>([]);
+  const [allCryptoData, setAllCryptoData] = useState<any>([]);
 
   useEffect(() => {
     api
@@ -13,7 +13,7 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20"
       )
       .then((response) => {
-        setAllCoins(response.data);
+        setAllCryptoData(response.data);
         console.log(response.data);
       });
   }, []);
@@ -22,7 +22,14 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
     <>
       <S.Container>
         <S.BackgroundCrypto>
-          <S.GridContainer></S.GridContainer>
+          {allCryptoData.map((crypto: any) => (
+            <S.GridContainer>
+              <S.CryptoImgColumn
+                src={crypto.image}
+                alt={`${crypto.name} image`}
+              />
+            </S.GridContainer>
+          ))}
         </S.BackgroundCrypto>
       </S.Container>
       <Footer />
