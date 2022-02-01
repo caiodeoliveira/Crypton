@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import sp_background from "../../../assets/sp_background.jpg";
+import bg_big from "../../../assets/bg_big.jpg";
 import { colors } from "../../../styles/mixins";
 
 const Container = styled.div`
@@ -7,35 +7,24 @@ const Container = styled.div`
   height: 100vh;
 `;
 
-const TableCrypto = styled.table`
-  border: 1px solid white;
-  border-radius: 5px;
+const BackgroundCrypto = styled.div`
+  background: url(${bg_big}) no-repeat;
   width: 100%;
   height: 100%;
 `;
 
-const TableHeaderCrypto = styled.tr``;
-
-const CryptoListContainer = styled.div`
-  background: url(${sp_background}) no-repeat;
-  width: 100%;
-  height: 100%;
-  border-radius: 3px;
-  margin-top: 1px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const CryptoListContent = styled.div`
+// -------->  Header <-------
+const HeaderFlexContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  color: ${colors.body};
 `;
 
-const Crypto = styled.img`
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+`;
+
+const CryptoImgColumn = styled.img`
   width: 40px;
 `;
 const CryptoSymbol = styled.p``;
@@ -48,10 +37,10 @@ const CryptoPrice = styled.p`
 `;
 const S = {
   Container,
-  TableCrypto,
-  TableHeaderCrypto,
-  CryptoListContainer,
-  CryptoListContent,
+  BackgroundCrypto,
+  HeaderFlexContainer,
+  GridContainer,
+  CryptoImgColumn,
   Crypto,
   CryptoSymbol,
   CryptoPrice,

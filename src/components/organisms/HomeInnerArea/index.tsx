@@ -5,7 +5,7 @@ import api from "../../../services/api/index";
 import { useEffect, useState } from "react";
 
 const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
-  const [allCoins, setAllCoins] = useState<any>([]);
+  const [allCryptoData, setAllCryptoData] = useState<any>([]);
 
   useEffect(() => {
     api
@@ -13,7 +13,7 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20"
       )
       .then((response) => {
-        setAllCoins(response.data);
+        setAllCryptoData(response.data);
         console.log(response.data);
       });
   }, []);
@@ -21,21 +21,16 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
   return (
     <>
       <S.Container>
-        <S.TableCrypto>
-          <S.TableHeaderCrypto>
-            <S.CryptoListContainer>
-              {allCoins.map((coins: any) => (
-                <S.CryptoListContent>
-                  <S.Crypto src={coins.image} alt={allCoins.id} />
-                  <S.CryptoSymbol>( {coins.symbol} )</S.CryptoSymbol>
-                  <S.CryptoPrice>
-                    {coins.current_price.toFixed(2)} USD
-                  </S.CryptoPrice>
-                </S.CryptoListContent>
-              ))}
-            </S.CryptoListContainer>
-          </S.TableHeaderCrypto>
-        </S.TableCrypto>
+        <S.BackgroundCrypto>
+          {allCryptoData.map((crypto: any) => (
+            <S.GridContainer>
+              <S.CryptoImgColumn
+                src={crypto.image}
+                alt={`${crypto.name} image`}
+              />
+            </S.GridContainer>
+          ))}
+        </S.BackgroundCrypto>
       </S.Container>
       <Footer />
     </>
