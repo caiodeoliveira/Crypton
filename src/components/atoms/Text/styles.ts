@@ -1,5 +1,14 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 import { colors, typography, fonts } from "../../../styles/mixins";
+
+interface TextColorProps {
+  color?: string;
+}
+
+const colorSetter = css`
+  color: ${(props: TextColorProps) => (props.color ? props.color : "")};
+`;
 
 const TitleText = styled.div`
   font-size: ${typography.title};
@@ -39,7 +48,8 @@ const LoginProblemLabel = styled.div`
   color: ${colors.body};
 `;
 
-const ParagraphLabelText = styled.p`
+const ParagraphLabelText = styled.p<TextColorProps>`
+  ${colorSetter};
   font-size: ${typography.accordion.item};
   font-weight: ${fonts.montserrat.normal};
   color: ${colors.body};

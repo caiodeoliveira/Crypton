@@ -2,48 +2,40 @@ import styled from "styled-components";
 import bg_big from "../../../assets/bg_big.jpg";
 import { colors } from "../../../styles/mixins";
 
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-`;
-
 const BackgroundCrypto = styled.div`
   background: url(${bg_big}) no-repeat;
-  width: 100%;
-  height: 100%;
-`;
-
-// -------->  Header <-------
-const HeaderFlexContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: space-evenly;
+`;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const GridContainer = styled.div`
+const CryptoGridContainer = styled.div`
+  width: 20%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 80px;
 `;
 
-const CryptoImgColumn = styled.img`
+const CryptoImage = styled.img`
   width: 40px;
 `;
-const CryptoSymbol = styled.p``;
 
-const CryptoPrice = styled.p`
-  color: ${colors.primary};
-  border-left: 3px solid ${colors.primary};
-  margin-left: 20px;
-  padding-left: 10px;
-`;
+const CryptoPrice = styled.p``;
+
+const CryptoDayStatys = styled.p``;
+
 const S = {
-  Container,
   BackgroundCrypto,
-  HeaderFlexContainer,
-  GridContainer,
-  CryptoImgColumn,
-  Crypto,
-  CryptoSymbol,
+  Container,
+  CryptoImage,
+  CryptoGridContainer,
   CryptoPrice,
+  CryptoDayStatys,
 };
 
 export default S;
