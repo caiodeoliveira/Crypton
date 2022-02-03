@@ -34,7 +34,7 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
                 </S.CryptoPrice>
                 <S.CryptoDayStatys>
                   <Text type={"paragraph_text"}>
-                    {crypto.market_cap_change_percentage_24h}%
+                    {crypto.market_cap_change_percentage_24h.toFixed(2)}%
                   </Text>
                 </S.CryptoDayStatys>
               </S.CryptoGridContainer>
