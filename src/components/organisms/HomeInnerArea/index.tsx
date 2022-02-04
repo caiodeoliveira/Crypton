@@ -11,9 +11,7 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
 
   useEffect(() => {
     api
-      .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20"
-      )
+      .get("/coins/markets?vs_currency=usd&description=true")
       .then((response) => {
         setAllCryptoData(response.data);
       });
@@ -27,6 +25,9 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
           {allCryptoData.map((crypto: any) => (
             <>
               <S.CryptoGridContainer>
+                <S.CryptoRank>
+                  <Text type={"paragraph_text"}>{crypto.market_cap_rank}</Text>
+                </S.CryptoRank>
                 <S.CryptoImage src={crypto.image} />
                 <S.CryptoPrice>
                   <Text type={"paragraph_text"}>{crypto.current_price}</Text>

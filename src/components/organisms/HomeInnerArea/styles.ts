@@ -31,6 +31,8 @@ const CryptoDayStatus = styled.p``;
 
 const CryptoWeekStatus = styled.p``;
 
+const CryptoRank = styled.p``;
+
 const S = {
   BackgroundCrypto,
   Container,
@@ -39,6 +41,7 @@ const S = {
   CryptoPrice,
   CryptoDayStatus,
   CryptoWeekStatus,
+  CryptoRank,
 };
 
 export default S;
