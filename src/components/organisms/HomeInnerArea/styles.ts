@@ -27,7 +27,11 @@ const CryptoImage = styled.img`
 
 const CryptoPrice = styled.p``;
 
-const CryptoDayStatys = styled.p``;
+const CryptoDayStatus = styled.p``;
+
+const CryptoWeekStatus = styled.p``;
+
+const CryptoRank = styled.p``;
 
 const S = {
   BackgroundCrypto,
@@ -35,7 +39,9 @@ const S = {
   CryptoImage,
   CryptoGridContainer,
   CryptoPrice,
-  CryptoDayStatys,
+  CryptoDayStatus,
+  CryptoWeekStatus,
+  CryptoRank,
 };
 
 export default S;

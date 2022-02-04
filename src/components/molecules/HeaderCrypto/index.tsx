@@ -9,8 +9,8 @@ const HeaderCrypto: React.FC = () => {
       <Text type={"paragraph_text"}>#</Text>
       <Text type={"paragraph_text"}>Name</Text>
       <Text type={"paragraph_text"}>Price</Text>
-      <Text type={"paragraph_text"}>24%</Text>
-      <Text type={"paragraph_text"}>7%</Text>
+      <Text type={"paragraph_text"}>24h %</Text>
+      <Text type={"paragraph_text"}>7d %</Text>
       <Text type={"paragraph_text"}>Market Cap</Text>
       <Text type={"paragraph_text"}>Volume(24h)</Text>
       <Text type={"paragraph_text"}>Circulating Supply</Text>
