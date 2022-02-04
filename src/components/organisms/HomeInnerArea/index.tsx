@@ -16,7 +16,6 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
       )
       .then((response) => {
         setAllCryptoData(response.data);
-        console.log(response.data);
       });
   }, []);
 
@@ -32,11 +31,12 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
                 <S.CryptoPrice>
                   <Text type={"paragraph_text"}>{crypto.current_price}</Text>
                 </S.CryptoPrice>
-                <S.CryptoDayStatys>
-                  <Text type={"paragraph_text"}>
-                    {crypto.market_cap_change_percentage_24h.toFixed(2)}%
-                  </Text>
-                </S.CryptoDayStatys>
+                <S.CryptoDayStatus>
+                  <Text type={"paragraph_text"}>......</Text>
+                  <S.CryptoWeekStatus>
+                    <Text type={"paragraph_text"}>${crypto.market_cap}</Text>
+                  </S.CryptoWeekStatus>
+                </S.CryptoDayStatus>
               </S.CryptoGridContainer>
             </>
           ))}
