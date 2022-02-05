@@ -47,6 +47,10 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
                   ${crypto.price_change_percentage_7d_in_currency}
                 </Text>
               </S.CryptoWeekStatus>
+
+              <S.CryptoMarketCap>
+                <Text type={"paragraph_text"}>${crypto.market_cap}</Text>
+              </S.CryptoMarketCap>
             </S.CryptoGridContainer>
           </>
         ))}
