@@ -55,6 +55,12 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
               <S.CryptoVolume>
                 <Text type={"paragraph_text"}>${crypto.total_volume}</Text>
               </S.CryptoVolume>
+
+              <S.CryptoSupply>
+                <Text type={"paragraph_text"}>
+                  ${crypto.circulating_supply}
+                </Text>
+              </S.CryptoSupply>
             </S.CryptoGridContainer>
           </>
         ))}

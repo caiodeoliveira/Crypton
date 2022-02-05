@@ -35,6 +35,8 @@ const CryptoMarketCap = styled.p``;
 
 const CryptoVolume = styled.p``;
 
+const CryptoSupply = styled.p``;
+
 const S = {
   BackgroundCrypto,
   CryptoRank,
@@ -45,6 +47,7 @@ const S = {
   CryptoWeekStatus,
   CryptoMarketCap,
   CryptoVolume,
+  CryptoSupply,
 };
 
 export default S;
