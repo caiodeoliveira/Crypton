@@ -11,7 +11,9 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
 
   useEffect(() => {
     api
-      .get("/coins/markets?vs_currency=usd&description=true")
+      .get(
+        "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&price_change_percentage=24h,7d"
+      )
       .then((response) => {
         setAllCryptoData(response.data);
       });
@@ -20,28 +22,28 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
   return (
     <>
       <S.BackgroundCrypto>
-        <S.Container>
-          <HeaderCrypto />
-          {allCryptoData.map((crypto: any) => (
-            <>
-              <S.CryptoGridContainer>
-                <S.CryptoRank>
-                  <Text type={"paragraph_text"}>{crypto.market_cap_rank}</Text>
-                </S.CryptoRank>
-                <S.CryptoImage src={crypto.image} />
-                <S.CryptoPrice>
-                  <Text type={"paragraph_text"}>{crypto.current_price}</Text>
-                </S.CryptoPrice>
-                <S.CryptoDayStatus>
-                  <Text type={"paragraph_text"}>......</Text>
-                  <S.CryptoWeekStatus>
-                    <Text type={"paragraph_text"}>${crypto.market_cap}</Text>
-                  </S.CryptoWeekStatus>
-                </S.CryptoDayStatus>
-              </S.CryptoGridContainer>
-            </>
-          ))}
-        </S.Container>
+        <HeaderCrypto />
+        {allCryptoData.map((crypto: any) => (
+          <>
+            <S.CryptoGridContainer>
+              <S.CryptoRank>
+                <Text type={"paragraph_text"}>{crypto.market_cap_rank}</Text>
+              </S.CryptoRank>
+
+              <S.CryptoImage src={crypto.image} />
+
+              <S.CryptoPrice>
+                <Text type={"paragraph_text"}>${crypto.current_price}</Text>
+              </S.CryptoPrice>
+
+              <S.CryptoDayStatus>
+                <Text type={"paragraph_text"}>
+                  {crypto.price_change_percentage_24h}
+                </Text>
+              </S.CryptoDayStatus>
+            </S.CryptoGridContainer>
+          </>
+        ))}
       </S.BackgroundCrypto>
       <Footer />
     </>
