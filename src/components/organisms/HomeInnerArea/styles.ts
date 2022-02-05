@@ -4,22 +4,22 @@ import { colors } from "../../../styles/mixins";
 
 const BackgroundCrypto = styled.div`
   background: url(${bg_big}) no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: space-evenly;
-`;
-const Container = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const CryptoGridContainer = styled.div`
-  width: 20%;
+  width: 50%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
 `;
+
+const CryptoRank = styled.p``;
 
 const CryptoImage = styled.img`
   width: 40px;
@@ -31,17 +31,17 @@ const CryptoDayStatus = styled.p``;
 
 const CryptoWeekStatus = styled.p``;
 
-const CryptoRank = styled.p``;
+const CryptoMarketCap = styled.p``;
 
 const S = {
   BackgroundCrypto,
-  Container,
+  CryptoRank,
   CryptoImage,
   CryptoGridContainer,
   CryptoPrice,
   CryptoDayStatus,
   CryptoWeekStatus,
-  CryptoRank,
+  CryptoMarketCap,
 };
 
 export default S;
