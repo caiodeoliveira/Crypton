@@ -12,7 +12,7 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
   useEffect(() => {
     api
       .get(
-        "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&price_change_percentage=24h,7d"
+        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=20&price_change_percentage=24h,7d&sparkline=true"
       )
       .then((response) => {
         setAllCryptoData(response.data);
@@ -51,6 +51,10 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
               <S.CryptoMarketCap>
                 <Text type={"paragraph_text"}>${crypto.market_cap}</Text>
               </S.CryptoMarketCap>
+
+              <S.CryptoVolume>
+                <Text type={"paragraph_text"}>${crypto.total_volume}</Text>
+              </S.CryptoVolume>
             </S.CryptoGridContainer>
           </>
         ))}

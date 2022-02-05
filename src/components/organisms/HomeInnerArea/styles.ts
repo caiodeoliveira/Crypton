@@ -12,9 +12,9 @@ const BackgroundCrypto = styled.div`
 `;
 
 const CryptoGridContainer = styled.div`
-  width: 50%;
+  width: 80%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
 `;
@@ -33,6 +33,8 @@ const CryptoWeekStatus = styled.p``;
 
 const CryptoMarketCap = styled.p``;
 
+const CryptoVolume = styled.p``;
+
 const S = {
   BackgroundCrypto,
   CryptoRank,
@@ -42,6 +44,7 @@ const S = {
   CryptoDayStatus,
   CryptoWeekStatus,
   CryptoMarketCap,
+  CryptoVolume,
 };
 
 export default S;
