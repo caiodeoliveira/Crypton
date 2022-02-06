@@ -26,7 +26,7 @@ const SubTitleText = styled.div`
   }
 `;
 const InputLabelText = styled.div`
-  font-size: ${typography.subTitle};
+  font-size: ${typography.floating_component.counter};
   font-weight: ${fonts.montserrat.normal};
   color: ${colors.body};
 `;

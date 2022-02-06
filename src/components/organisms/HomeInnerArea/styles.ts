@@ -11,14 +11,13 @@ const CryptoFlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
 `;
 
 const CryptoGridContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
 `;
 
 const CryptoHeader = styled.header`
@@ -31,7 +30,8 @@ const CryptoRank = styled.p``;
 const CoinContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: left;
+  margin-left: 50px;
 `;
 
 const CryptoImage = styled.img`

@@ -36,42 +36,42 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
           {allCryptoData.map((crypto: any) => (
             <S.CryptoGridContent>
               <S.CryptoRank>
-                <Text type={"paragraph_text"}>{crypto.market_cap_rank}</Text>
+                <Text type={"input_label"}>{crypto.market_cap_rank}</Text>
               </S.CryptoRank>
               <S.CoinContainer>
                 <S.CryptoImage
                   src={crypto.image}
                   alt={`${crypto.name} Image`}
                 />
-                <Text type={"paragraph_text"}>{crypto.name}</Text>
+                <Text type={"input_label"}>{crypto.name}</Text>
               </S.CoinContainer>
 
               <S.CryptoPrice>
-                <Text type={"paragraph_text"}>${crypto.current_price}</Text>
+                <Text type={"input_label"}>${crypto.current_price}</Text>
               </S.CryptoPrice>
 
               <S.CryptoDayStatus>
-                <Text type={"paragraph_text"}>
+                <Text type={"input_label"}>
                   % {crypto.price_change_percentage_24h.toFixed(1)}
                 </Text>
               </S.CryptoDayStatus>
 
               <S.CryptoWeekStatus>
-                <Text type={"paragraph_text"}>
-                  % {crypto.price_change_percentage_7d_in_currency}
+                <Text type={"input_label"}>
+                  % {crypto.price_change_percentage_7d_in_currency.toFixed(2)}
                 </Text>
               </S.CryptoWeekStatus>
 
               <S.CryptoMarketCap>
-                <Text type={"paragraph_text"}>{crypto.market_cap}</Text>
+                <Text type={"input_label"}>{crypto.market_cap}</Text>
               </S.CryptoMarketCap>
 
               <S.CryptoVolume>
-                <Text type={"paragraph_text"}>{crypto.total_volume}</Text>
+                <Text type={"input_label"}>{crypto.total_volume}</Text>
               </S.CryptoVolume>
 
               <S.CryptoSupply>
-                <Text type={"paragraph_text"}>{crypto.circulating_supply}</Text>
+                <Text type={"input_label"}>{crypto.circulating_supply}</Text>
               </S.CryptoSupply>
             </S.CryptoGridContent>
           ))}
