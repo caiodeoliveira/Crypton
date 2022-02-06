@@ -4,15 +4,15 @@ import { colors } from "../../../styles/mixins";
 const Footer = styled.div`
   background-color: ${colors.primary};
   border: 2px solid ${colors.dark};
-  border-radius: 3px;
-  width: 100%;
-  height: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  border-radius: 3px;
   padding: 7px 14.5px;
   position: fixed;
   bottom: 0;
+  overflow: hidden;
 `;
 
 const S = {

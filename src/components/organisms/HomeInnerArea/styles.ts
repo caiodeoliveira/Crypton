@@ -10,19 +10,21 @@ const BackgroundCrypto = styled.div`
 const CryptoFlexContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-`;
-
-const CryptoGridContent = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  align-items: center;
-  margin-top: 50px;
 `;
 
 const CryptoHeader = styled.header`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 20px 0 40px 0;
+`;
+
+const CryptoGridContent = styled.div`
+  display: grid;
+  width: 100%;
+  max-height: 120px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0px 0 100px 0;
 `;
 
 const CryptoRank = styled.p``;
