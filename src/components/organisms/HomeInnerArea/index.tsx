@@ -12,7 +12,7 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
   useEffect(() => {
     api
       .get(
-        "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&price_change_percentage=24h,7d"
+        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=20&price_change_percentage=24h,7d&sparkline=true"
       )
       .then((response) => {
         setAllCryptoData(response.data);
@@ -22,15 +22,29 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
   return (
     <>
       <S.BackgroundCrypto>
-        <HeaderCrypto />
-        {allCryptoData.map((crypto: any) => (
-          <>
-            <S.CryptoGridContainer>
+        <S.CryptoFlexContainer>
+          <S.CryptoHeader>
+            <Text type={"input_label"}>#</Text>
+            <Text type={"input_label"}>Coin</Text>
+            <Text type={"input_label"}>Price</Text>
+            <Text type={"input_label"}>24h %</Text>
+            <Text type={"input_label"}>7d %</Text>
+            <Text type={"input_label"}>Market Cap</Text>
+            <Text type={"input_label"}>Volume(24h)</Text>
+            <Text type={"input_label"}>Circulating Supply</Text>
+          </S.CryptoHeader>
+          {allCryptoData.map((crypto: any) => (
+            <S.CryptoGridContent>
               <S.CryptoRank>
                 <Text type={"paragraph_text"}>{crypto.market_cap_rank}</Text>
               </S.CryptoRank>
-
-              <S.CryptoImage src={crypto.image} />
+              <S.CoinContainer>
+                <S.CryptoImage
+                  src={crypto.image}
+                  alt={`${crypto.name} Image`}
+                />
+                <Text type={"paragraph_text"}>{crypto.name}</Text>
+              </S.CoinContainer>
 
               <S.CryptoPrice>
                 <Text type={"paragraph_text"}>${crypto.current_price}</Text>
@@ -38,22 +52,30 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
 
               <S.CryptoDayStatus>
                 <Text type={"paragraph_text"}>
-                  {crypto.price_change_percentage_24h}
+                  % {crypto.price_change_percentage_24h.toFixed(1)}
                 </Text>
               </S.CryptoDayStatus>
 
               <S.CryptoWeekStatus>
                 <Text type={"paragraph_text"}>
-                  ${crypto.price_change_percentage_7d_in_currency}
+                  % {crypto.price_change_percentage_7d_in_currency}
                 </Text>
               </S.CryptoWeekStatus>
 
               <S.CryptoMarketCap>
-                <Text type={"paragraph_text"}>${crypto.market_cap}</Text>
+                <Text type={"paragraph_text"}>{crypto.market_cap}</Text>
               </S.CryptoMarketCap>
-            </S.CryptoGridContainer>
-          </>
-        ))}
+
+              <S.CryptoVolume>
+                <Text type={"paragraph_text"}>{crypto.total_volume}</Text>
+              </S.CryptoVolume>
+
+              <S.CryptoSupply>
+                <Text type={"paragraph_text"}>{crypto.circulating_supply}</Text>
+              </S.CryptoSupply>
+            </S.CryptoGridContent>
+          ))}
+        </S.CryptoFlexContainer>
       </S.BackgroundCrypto>
       <Footer />
     </>

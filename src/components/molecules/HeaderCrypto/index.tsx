@@ -5,7 +5,6 @@ import Text from "../../atoms/Text";
 const HeaderCrypto: React.FC = () => {
   return (
     <S.Container>
-      <S.CryptoPosition>#</S.CryptoPosition>
       <Text type={"paragraph_text"}>#</Text>
       <Text type={"paragraph_text"}>Name</Text>
       <Text type={"paragraph_text"}>Price</Text>
@@ -14,7 +13,6 @@ const HeaderCrypto: React.FC = () => {
       <Text type={"paragraph_text"}>Market Cap</Text>
       <Text type={"paragraph_text"}>Volume(24h)</Text>
       <Text type={"paragraph_text"}>Circulating Supply</Text>
-      <Text type={"paragraph_text"}>Last 7 Days</Text>
     </S.Container>
   );
 };

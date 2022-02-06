@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const Container = styled.header`
-  margin-top: 10px;
-  width: 100%;
   display: flex;
+  width: 1600px;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-top: 30px;
 `;
 
 const CryptoPosition = styled.div``;
