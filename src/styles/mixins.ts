@@ -29,21 +29,11 @@ export const colors = {
 
 export const typography = {
   subTitle: "19px",
-  description: "13px",
-  table: "14px",
   modal_title: "25px",
   modal_subtitle: "16px",
   modal_subtitle2: "14px",
   modal_subtitle3: "14px",
-  navbar_version: "14px",
-  toast_title: "15px",
-  toast_progress: "10px",
-  text_area_url: "15px",
-  specs: "12px",
-  error_toast: {
-    title: "15px",
-    message: "14px",
-  },
+
   floating_component: {
     text: "16px",
     button_text: "14px",

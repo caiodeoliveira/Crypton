@@ -37,6 +37,7 @@ const HomeInnerArea = ({}: HomeInnerAreaProps) => {
               <S.CryptoRank>
                 <Text type={"footer"}>{crypto.market_cap_rank}</Text>
               </S.CryptoRank>
+
               <S.CoinContainer>
                 <S.CryptoImage
                   src={crypto.image}

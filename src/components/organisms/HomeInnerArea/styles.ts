@@ -32,11 +32,11 @@ const CoinContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: left;
-  margin-left: 50px;
+  margin-left: 60px;
 `;
 
 const CryptoImage = styled.img`
-  width: 60px;
+  max-width: 50px;
 `;
 
 const CryptoPrice = styled.p``;

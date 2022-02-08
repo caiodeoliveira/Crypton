@@ -4,8 +4,6 @@ import S from "./styles";
 const Text = ({ type, children, color }: TextProps) => {
   const selectType = () => {
     switch (type) {
-      case "title":
-        return <S.TitleText>{children}</S.TitleText>;
       case "subtitle":
         return <S.SubTitleText>{children}</S.SubTitleText>;
       case "input_label":
