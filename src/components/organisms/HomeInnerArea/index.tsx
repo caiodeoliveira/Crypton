@@ -3,10 +3,9 @@ import Footer from "../../atoms/Footer";
 import { HomeInnerAreaProps } from "./types";
 import api from "../../../services/api/index";
 import { useEffect, useState } from "react";
-import HeaderCrypto from "../../molecules/HeaderCrypto";
 import Text from "../../atoms/Text";
 
-const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
+const HomeInnerArea = ({}: HomeInnerAreaProps) => {
   const [allCryptoData, setAllCryptoData] = useState<any>([]);
 
   useEffect(() => {
@@ -38,6 +37,7 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
               <S.CryptoRank>
                 <Text type={"footer"}>{crypto.market_cap_rank}</Text>
               </S.CryptoRank>
+
               <S.CoinContainer>
                 <S.CryptoImage
                   src={crypto.image}
@@ -51,13 +51,27 @@ const HomeInnerArea = ({ children }: HomeInnerAreaProps) => {
               </S.CryptoPrice>
 
               <S.CryptoDayStatus>
-                <Text type={"footer"}>
+                <Text
+                  type={"footer"}
+                  color={
+                    crypto.price_change_percentage_24h >= 0
+                      ? "#12f212"
+                      : "#fe2222"
+                  }
+                >
                   % {crypto.price_change_percentage_24h.toFixed(1)}
                 </Text>
               </S.CryptoDayStatus>
 
               <S.CryptoWeekStatus>
-                <Text type={"footer"}>
+                <Text
+                  type={"footer"}
+                  color={
+                    crypto.price_change_percentage_7d_in_currency >= 0
+                      ? "#12f212"
+                      : "#fe2222"
+                  }
+                >
                   % {crypto.price_change_percentage_7d_in_currency.toFixed(2)}
                 </Text>
               </S.CryptoWeekStatus>

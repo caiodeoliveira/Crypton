@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import bg_big from "../../../assets/bg_big.jpg";
-import { colors } from "../../../styles/mixins";
+import bg_medium from "../../../assets/bg_medium.jpg";
 
 const BackgroundCrypto = styled.div`
-  background: url(${bg_big});
+  background: url(${bg_medium});
   background-size: cover;
 `;
 
@@ -33,11 +32,11 @@ const CoinContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: left;
-  margin-left: 50px;
+  margin-left: 60px;
 `;
 
 const CryptoImage = styled.img`
-  width: 60px;
+  max-width: 50px;
 `;
 
 const CryptoPrice = styled.p``;
