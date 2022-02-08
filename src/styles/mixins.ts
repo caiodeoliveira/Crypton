@@ -1,6 +1,5 @@
 export const colors = {
   primary: "#169916",
-  primary_dark: "#006344",
   secondary: "#ACACAC",
   cancel: "#E84C4C",
   fonts: "#42434A",
@@ -19,16 +18,6 @@ export const colors = {
     front: "#017E57",
     back: "#E7E7E7",
   },
-  badges: {
-    green: "#63CC5A",
-    yellow: "#FFC700",
-    red: "#E84C4C",
-    lightRed: "#ff755e",
-    gray: "#d7d7d7",
-    darkGray: "#a6a6a6",
-    blue: "#76daf9",
-    orange: "#feb14b",
-  },
   floating_component: {
     dark_green: "#006344",
   },
@@ -39,7 +28,6 @@ export const colors = {
 };
 
 export const typography = {
-  title: "35px",
   subTitle: "19px",
   description: "13px",
   table: "14px",

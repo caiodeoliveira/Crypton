@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import bg_big from "../../../assets/bg_big.jpg";
-import { colors } from "../../../styles/mixins";
+import bg_medium from "../../../assets/bg_medium.jpg";
 
 const BackgroundCrypto = styled.div`
-  background: url(${bg_big});
+  background: url(${bg_medium});
   background-size: cover;
 `;
 

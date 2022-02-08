@@ -1,7 +1,7 @@
 import TextProps from "./types";
 import S from "./styles";
 
-const Text = ({ type, children }: TextProps) => {
+const Text = ({ type, children, color }: TextProps) => {
   const selectType = () => {
     switch (type) {
       case "title":
@@ -9,9 +9,13 @@ const Text = ({ type, children }: TextProps) => {
       case "subtitle":
         return <S.SubTitleText>{children}</S.SubTitleText>;
       case "input_label":
-        return <S.InputLabelText>{children}</S.InputLabelText>;
+        return (
+          <S.InputLabelText style={{ color: color }}>
+            {children}
+          </S.InputLabelText>
+        );
       case "footer":
-        return <S.FooterText>{children}</S.FooterText>;
+        return <S.FooterText style={{ color: color }}>{children}</S.FooterText>;
       case "paragraph_text":
         return <S.ParagraphLabelText>{children}</S.ParagraphLabelText>;
     }
