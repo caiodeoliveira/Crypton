@@ -8,7 +8,6 @@ import { RiSpaceShipLine } from "react-icons/ri";
 
 const HomeUpperArea = ({}: HomeUpperAreaProps) => {
   const [trendingCoins, setTrendingCoins] = useState<any>([]);
-  const [price, setPrice] = useState<any>([]);
 
   useEffect(() => {
     api
@@ -32,6 +31,7 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
             {trendingCoins &&
               trendingCoins.map((crypto: any) => (
                 <S.TrendingCoinsContent>
+                  <Text type={"paragraph_text"}>{crypto.item.score + 1}</Text>
                   <S.TrendingCoins
                     src={crypto.item.thumb}
                     alt="trending cryptos"
@@ -46,7 +46,7 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
                   </S.TrendingName>
                   <S.TrendingPrice>
                     <Text type={"paragraph_text"}>
-                      {` BTC ${crypto.item.price_btc.toFixed(20)}`}
+                      {` BTC ${crypto.item.price_btc.toFixed(10)}`}
                     </Text>
                   </S.TrendingPrice>
                 </S.TrendingCoinsContent>

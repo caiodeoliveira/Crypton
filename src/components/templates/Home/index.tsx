@@ -11,7 +11,7 @@ const Home = () => {
           <TopBar></TopBar>
         </HomeUpperArea>
         <HomeInnerArea>
-          <p>text</p>
+          <></>
         </HomeInnerArea>
       </S.Container>
     </>

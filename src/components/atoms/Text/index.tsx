@@ -15,7 +15,11 @@ const Text = ({ type, children, color }: TextProps) => {
       case "footer":
         return <S.FooterText style={{ color: color }}>{children}</S.FooterText>;
       case "paragraph_text":
-        return <S.ParagraphLabelText>{children}</S.ParagraphLabelText>;
+        return (
+          <S.ParagraphLabelText style={{ color: color }}>
+            {children}
+          </S.ParagraphLabelText>
+        );
     }
   };
   return selectType();

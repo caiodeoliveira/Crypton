@@ -32,12 +32,12 @@ export default createGlobalStyle`
     box-sizing: border-box;
     .MuiDrawer-paperAnchorDockedLeft {
     border-right: none !important;
-    }
-    &::-webkit-scrollbar-track {
+  }
+  &::-webkit-scrollbar-track {
         background-color: transparent;
         border-radius: 5px;
-    }
-    &::-webkit-scrollbar {
+      }
+      &::-webkit-scrollbar {
         width: 16px;
         border-radius: 5px;
         background: black;
@@ -46,11 +46,13 @@ export default createGlobalStyle`
         border-radius: 10px;
         background: ${colors.primary};
         border:4px solid black;
+      }
+
     }
-  }
-  body {
-    background: ${colors.background};
-    --webkit-font-smoothing: antialiased;
+    body {
+      background: ${colors.background};
+      --webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
   }
   #root, body, html {
     height: 100%;

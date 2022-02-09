@@ -12,7 +12,6 @@ const Footer = styled.div`
   padding: 7px 14.5px;
   position: fixed;
   bottom: 0;
-  overflow: hidden;
 `;
 
 const S = {
