@@ -43,7 +43,7 @@ const HomeInnerArea = ({}: HomeInnerAreaProps) => {
                   src={crypto.image}
                   alt={`${crypto.name} Image`}
                 />
-                <Text type={"footer"}>{crypto.name}</Text>
+                <Text type={"input_label"}>{crypto.name}</Text>
               </S.CoinContainer>
 
               <S.CryptoPrice>

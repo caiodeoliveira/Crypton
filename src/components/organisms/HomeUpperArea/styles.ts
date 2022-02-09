@@ -29,7 +29,7 @@ const TrendingCoinsContainer = styled.div`
   height: 24%;
   align-items: center;
   justify-content: space-between;
-  padding: 12px;
+  padding: 12px 40px;
   margin: 0 200px 50px 0;
 `;
 

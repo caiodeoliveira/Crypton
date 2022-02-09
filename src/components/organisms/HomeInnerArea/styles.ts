@@ -23,7 +23,7 @@ const CryptoGridContent = styled.div`
   max-height: 120px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
-  padding: 0px 0 100px 0;
+  padding: 0 0 30px 0;
 `;
 
 const CryptoRank = styled.p``;
@@ -32,11 +32,10 @@ const CoinContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: left;
-  margin-left: 60px;
 `;
 
 const CryptoImage = styled.img`
-  max-width: 50px;
+  max-width: 60px;
 `;
 
 const CryptoPrice = styled.p``;
