@@ -25,7 +25,7 @@ const HomeInnerArea = () => {
           <S.CryptoHeader>
             <Text type={"input_label"}>#</Text>
             <Text type={"input_label"}>Coin</Text>
-            {/* <Text type={"input_label"}></Text> */}
+            <Text type={"input_label"}>Symbol</Text>
             <Text type={"input_label"}>Price</Text>
             <Text type={"input_label"}>24h %</Text>
             <Text type={"input_label"}>7d %</Text>
@@ -46,6 +46,10 @@ const HomeInnerArea = () => {
                 />
                 <Text type={"input_label"}>{crypto.name}</Text>
               </S.CoinContainer>
+
+              <Text type={"input_label"}>
+                ( {crypto.symbol.toUpperCase()} )
+              </Text>
 
               <S.CryptoPrice>
                 <Text type={"footer"}>$ {crypto.current_price.toFixed(2)}</Text>

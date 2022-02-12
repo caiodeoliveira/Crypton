@@ -9,7 +9,7 @@ const BackgroundCrypto = styled.div`
 const CryptoFlexContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 100px 0 0;
+  margin-right: 100px;
 `;
 
 const CryptoHeader = styled.header`
@@ -17,7 +17,7 @@ const CryptoHeader = styled.header`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
-  margin: 10px 0 40px 0;
+  margin: 20px 0 40px 0;
 `;
 
 const CryptoGridContent = styled.div`
@@ -57,6 +57,8 @@ const CryptoVolume = styled.p``;
 
 const CryptoSupply = styled.p``;
 
+const CryptoSymbol = styled.p``;
+
 const S = {
   BackgroundCrypto,
   CryptoFlexContainer,
@@ -65,6 +67,7 @@ const S = {
   CoinContainer,
   CryptoRank,
   CryptoImage,
+  CryptoSymbol,
   CryptoPrice,
   CryptoDayStatus,
   CryptoWeekStatus,

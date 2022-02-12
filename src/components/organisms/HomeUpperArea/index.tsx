@@ -24,9 +24,11 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
     <>
       <S.TopContainer>
         <S.TrendingContainer>
-          <Text type={"input_label"}>{"Trending"}</Text>
-          {<RiSpaceShipLine size={30} color={"yellow"} />}
-          <Text type={"input_label"}>{"2 . 0 . 0"}</Text>
+          <S.TrendingLeftContainer>
+            <Text type={"subtitle"}>{"Trending"}</Text>
+            {<RiSpaceShipLine size={80} color={"yellow"} />}
+          </S.TrendingLeftContainer>
+
           <S.TrendingCoinsContainer>
             {trendingCoins &&
               trendingCoins.map((crypto: any) => (
@@ -52,6 +54,9 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
                 </S.TrendingCoinsContent>
               ))}
           </S.TrendingCoinsContainer>
+          <S.TrendingRightContainer>
+            <Text type={"subtitle"}>{"v 2.0.0"}</Text>
+          </S.TrendingRightContainer>
         </S.TrendingContainer>
       </S.TopContainer>
     </>
