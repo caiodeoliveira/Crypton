@@ -4,4 +4,5 @@ export default interface TextProps {
   type: TextTypes;
   children: React.ReactNode;
   color?: string;
+  margin?: string;
 }

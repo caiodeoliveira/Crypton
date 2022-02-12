@@ -4,7 +4,6 @@ import { colors, typography, fonts } from "../../../styles/mixins";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  text-align: center;
   opacity: 0.9;
 `;
 

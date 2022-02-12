@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/mixins";
 
-const Footer = styled.div`
+const Footer = styled.footer`
   background-color: ${colors.primary};
   border: 2px solid ${colors.dark};
   display: flex;

@@ -9,11 +9,14 @@ const BackgroundCrypto = styled.div`
 const CryptoFlexContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 100px;
 `;
 
 const CryptoHeader = styled.header`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
   margin: 20px 0 40px 0;
 `;
 
@@ -21,9 +24,11 @@ const CryptoGridContent = styled.div`
   display: grid;
   width: 100%;
   max-height: 120px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
+  justify-items: center;
   padding: 0 0 30px 0;
+  margin-bottom: 30px;
 `;
 
 const CryptoRank = styled.p``;
@@ -32,10 +37,12 @@ const CoinContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: left;
+  gap: 20px;
+  width: 70%;
 `;
 
 const CryptoImage = styled.img`
-  max-width: 60px;
+  max-width: 65px;
 `;
 
 const CryptoPrice = styled.p``;
@@ -50,6 +57,8 @@ const CryptoVolume = styled.p``;
 
 const CryptoSupply = styled.p``;
 
+const CryptoSymbol = styled.p``;
+
 const S = {
   BackgroundCrypto,
   CryptoFlexContainer,
@@ -58,6 +67,7 @@ const S = {
   CoinContainer,
   CryptoRank,
   CryptoImage,
+  CryptoSymbol,
   CryptoPrice,
   CryptoDayStatus,
   CryptoWeekStatus,

@@ -1,14 +1,14 @@
 import TextProps from "./types";
 import S from "./styles";
 
-const Text = ({ type, children, color }: TextProps) => {
+const Text = ({ type, children, color, margin }: TextProps) => {
   const selectType = () => {
     switch (type) {
       case "subtitle":
         return <S.SubTitleText>{children}</S.SubTitleText>;
       case "input_label":
         return (
-          <S.InputLabelText style={{ color: color }}>
+          <S.InputLabelText style={{ margin: margin }}>
             {children}
           </S.InputLabelText>
         );

@@ -1,11 +1,11 @@
 import S from "./styles";
-import Footer from "../../atoms/Footer";
-import { HomeInnerAreaProps } from "./types";
+import { colors } from "../../../styles/mixins";
 import api from "../../../services/api/index";
 import { useEffect, useState } from "react";
 import Text from "../../atoms/Text";
+import Footer from "../../atoms/Footer";
 
-const HomeInnerArea = ({}: HomeInnerAreaProps) => {
+const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<any>([]);
 
   useEffect(() => {
@@ -25,6 +25,7 @@ const HomeInnerArea = ({}: HomeInnerAreaProps) => {
           <S.CryptoHeader>
             <Text type={"input_label"}>#</Text>
             <Text type={"input_label"}>Coin</Text>
+            <Text type={"input_label"}>Symbol</Text>
             <Text type={"input_label"}>Price</Text>
             <Text type={"input_label"}>24h %</Text>
             <Text type={"input_label"}>7d %</Text>
@@ -46,8 +47,12 @@ const HomeInnerArea = ({}: HomeInnerAreaProps) => {
                 <Text type={"input_label"}>{crypto.name}</Text>
               </S.CoinContainer>
 
+              <Text type={"input_label"}>
+                ( {crypto.symbol.toUpperCase()} )
+              </Text>
+
               <S.CryptoPrice>
-                <Text type={"footer"}>$ {crypto.current_price}</Text>
+                <Text type={"footer"}>$ {crypto.current_price.toFixed(2)}</Text>
               </S.CryptoPrice>
 
               <S.CryptoDayStatus>
@@ -55,7 +60,7 @@ const HomeInnerArea = ({}: HomeInnerAreaProps) => {
                   type={"footer"}
                   color={
                     crypto.price_change_percentage_24h >= 0
-                      ? "#12f212"
+                      ? colors.primary
                       : "#fe2222"
                   }
                 >
@@ -68,7 +73,7 @@ const HomeInnerArea = ({}: HomeInnerAreaProps) => {
                   type={"footer"}
                   color={
                     crypto.price_change_percentage_7d_in_currency >= 0
-                      ? "#12f212"
+                      ? colors.primary
                       : "#fe2222"
                   }
                 >

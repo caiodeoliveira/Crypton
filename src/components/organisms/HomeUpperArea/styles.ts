@@ -8,14 +8,18 @@ const TopContainer = styled.div`
   height: 24%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: space-around;
 `;
 
 const TrendingContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 3.5px;
+  align-items: center;
+`;
+
+const TrendingLeftContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const TrendingCoinsContainer = styled.div`
@@ -25,34 +29,42 @@ const TrendingCoinsContainer = styled.div`
   border-bottom: 0.3px solid white;
   border-radius: 5px 5px 5px 5px;
   display: flex;
-  width: 100%;
-  height: 24%;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 40px;
-  margin: 0 200px 50px 0;
+  width: 100%;
+  height: 24%;
+  padding: 5px 100px;
+  margin: 0 200px 30px 30px;
+`;
+
+const TrendingRightContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11%;
 `;
 
 const TrendingCoinsContent = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
 `;
 
 const TrendingCoins = styled.img``;
 
 const TrendingName = styled.p``;
 
-const TrendingSymbol = styled.p`
-  webkit-font-smoothing: antialiased;
-`;
+const TrendingSymbol = styled.p``;
 
 const TrendingPrice = styled.p``;
 
 const S = {
   TopContainer,
   TrendingContainer,
+  TrendingLeftContainer,
+  TrendingRightContainer,
   TrendingCoinsContainer,
   TrendingCoinsContent,
   TrendingCoins,

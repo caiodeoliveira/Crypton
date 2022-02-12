@@ -10,9 +10,7 @@ const Home = () => {
         <HomeUpperArea>
           <TopBar></TopBar>
         </HomeUpperArea>
-        <HomeInnerArea>
-          <></>
-        </HomeInnerArea>
+        <HomeInnerArea />
       </S.Container>
     </>
   );
