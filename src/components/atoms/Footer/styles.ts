@@ -14,8 +14,14 @@ const Footer = styled.footer`
   bottom: 0;
 `;
 
+const PaginationContainer = styled.div`
+  position: absolute;
+  right: 20px;
+`;
+
 const S = {
   Footer,
+  PaginationContainer,
 };
 
 export default S;
