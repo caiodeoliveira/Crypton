@@ -3,7 +3,7 @@ import { colors } from "../../../styles/mixins";
 import api from "../../../services/api/index";
 import { useEffect, useState } from "react";
 import Text from "../../atoms/Text";
-import Footer from "../../atoms/Footer";
+import PaginationButtons from "../../atoms/Footer";
 
 const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<any>([]);
@@ -96,7 +96,7 @@ const HomeInnerArea = () => {
           ))}
         </S.CryptoFlexContainer>
       </S.BackgroundCrypto>
-      <Footer />
+      <PaginationButtons />
     </>
   );
 };
