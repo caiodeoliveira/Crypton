@@ -1,6 +1,6 @@
 import Text from "../../atoms/Text";
 import S from "./styles";
-
+import Pagination from "@material-ui/lab/Pagination";
 const Footer = () => {
   return (
     <S.Footer>
