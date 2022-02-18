@@ -1,5 +1,6 @@
 export interface PaginatorProps {
-  count: number;
+  totalPages: number;
+  currentPage: number;
   showLastButton: boolean;
   showFirstButton: boolean;
 }

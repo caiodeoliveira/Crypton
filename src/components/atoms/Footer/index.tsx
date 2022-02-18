@@ -9,7 +9,12 @@ const Footer = () => {
         {"Copyright © 2010-2022 CryptoHouse Company  All rights reserved."}
       </Text>
       <S.PaginationContainer>
-        <Paginator count={5} showFirstButton showLastButton />
+        <Paginator
+          totalPages={5}
+          showFirstButton
+          showLastButton
+          currentPage={0}
+        />
       </S.PaginationContainer>
     </S.Footer>
   );

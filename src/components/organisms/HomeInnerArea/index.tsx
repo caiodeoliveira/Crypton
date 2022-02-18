@@ -3,19 +3,15 @@ import { colors } from "../../../styles/mixins";
 import api from "../../../services/api/index";
 import { useEffect, useState } from "react";
 import Text from "../../atoms/Text";
-import PaginationButtons from "../../atoms/Footer";
+import Footer from "../../atoms/Footer";
 
 const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<any>([]);
 
   useEffect(() => {
-    api
-      .get(
-        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=20&price_change_percentage=24h,7d&sparkline=true"
-      )
-      .then((response) => {
-        setAllCryptoData(response.data);
-      });
+    api.get("exchanges/binance/tickers").then((response) => {
+      setAllCryptoData(response.data);
+    });
   }, []);
 
   return (
@@ -33,7 +29,7 @@ const HomeInnerArea = () => {
             <Text type={"input_label"}>Volume(24h)</Text>
             <Text type={"input_label"}>Circulating Supply</Text>
           </S.CryptoHeader>
-          {allCryptoData.map((crypto: any) => (
+          {/* {allCryptoData.map((crypto: any) => (
             <S.CryptoGridContent>
               <S.CryptoRank>
                 <Text type={"footer"}>{crypto.market_cap_rank}</Text>
@@ -93,10 +89,10 @@ const HomeInnerArea = () => {
                 <Text type={"footer"}>{crypto.circulating_supply}</Text>
               </S.CryptoSupply>
             </S.CryptoGridContent>
-          ))}
+          ))} */}
         </S.CryptoFlexContainer>
       </S.BackgroundCrypto>
-      <PaginationButtons />
+      <Footer />
     </>
   );
 };
