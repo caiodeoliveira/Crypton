@@ -1,6 +1,7 @@
 export interface PaginatorProps {
-  totalPages: number;
-  currentPage: number;
+  count: number;
+  page: number;
+  onChange: React.ChangeEventHandler<unknown>;
   showLastButton: boolean;
   showFirstButton: boolean;
 }

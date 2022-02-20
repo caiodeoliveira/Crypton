@@ -3,7 +3,6 @@ import Text from "../../atoms/Text";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
 import HomeUpperAreaProps from "./types";
-import { GiSpaceship } from "react-icons/gi";
 import { RiSpaceShipLine } from "react-icons/ri";
 
 const HomeUpperArea = ({}: HomeUpperAreaProps) => {
