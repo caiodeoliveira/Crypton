@@ -2,17 +2,19 @@ import Pagination from "@material-ui/lab/Pagination";
 import { PaginatorProps } from "./types";
 
 export const Paginator = ({
-  totalPages,
-  currentPage,
   showFirstButton,
   showLastButton,
+  count,
+  page,
+  onChange,
 }: PaginatorProps) => {
   return (
     <Pagination
-      count={totalPages}
-      page={currentPage}
+      count={count}
+      page={page}
       showFirstButton={showFirstButton}
       showLastButton={showLastButton}
+      onChange={onChange}
     />
   );
 };

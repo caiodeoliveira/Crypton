@@ -6,13 +6,26 @@ import Text from "../../atoms/Text";
 import Footer from "../../atoms/Footer";
 
 const HomeInnerArea = () => {
-  const [allCryptoData, setAllCryptoData] = useState<any>([]);
+  const [allCryptoData, setAllCryptoData] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(2);
 
+  const totalPages: number = 5;
   useEffect(() => {
-    api.get("exchanges/binance/tickers").then((response) => {
-      setAllCryptoData(response.data);
-    });
+    api
+      .get(
+        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=20&price_change_percentage=24h,7d&sparkline=true"
+      )
+      .then((response) => {
+        setAllCryptoData(response.data);
+      });
   }, []);
+
+  const handlePagination = async () => {
+    await console.log(allCryptoData);
+    await allCryptoData;
+    await allCryptoData.shift();
+    console.log(allCryptoData);
+  };
 
   return (
     <>
@@ -29,7 +42,7 @@ const HomeInnerArea = () => {
             <Text type={"input_label"}>Volume(24h)</Text>
             <Text type={"input_label"}>Circulating Supply</Text>
           </S.CryptoHeader>
-          {/* {allCryptoData.map((crypto: any) => (
+          {allCryptoData.map((crypto: any) => (
             <S.CryptoGridContent>
               <S.CryptoRank>
                 <Text type={"footer"}>{crypto.market_cap_rank}</Text>
@@ -89,10 +102,14 @@ const HomeInnerArea = () => {
                 <Text type={"footer"}>{crypto.circulating_supply}</Text>
               </S.CryptoSupply>
             </S.CryptoGridContent>
-          ))} */}
+          ))}
         </S.CryptoFlexContainer>
       </S.BackgroundCrypto>
-      <Footer />
+      <Footer
+        onClick={handlePagination}
+        currentPages={currentPage}
+        totalPages={totalPages}
+      />
     </>
   );
 };
