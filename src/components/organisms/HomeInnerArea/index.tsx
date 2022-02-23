@@ -6,25 +6,23 @@ import Text from "../../atoms/Text";
 import Footer from "../../atoms/Footer";
 
 const HomeInnerArea = () => {
-  const [allCryptoData, setAllCryptoData] = useState<string[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(2);
+  const [allCryptoData, setAllCryptoData] = useState<number[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(0);
 
-  const totalPages: number = 5;
   useEffect(() => {
     api
       .get(
-        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=20&price_change_percentage=24h,7d&sparkline=true"
+        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=100&price_change_percentage=24h,7d&sparkline=true"
       )
       .then((response) => {
         setAllCryptoData(response.data);
+        setTotalPages(response.data.length / 20);
       });
-  }, []);
+  }, [currentPage]);
 
-  const handlePagination = async () => {
-    await console.log(allCryptoData);
-    await allCryptoData;
-    await allCryptoData.shift();
-    console.log(allCryptoData);
+  const handlePagination = (event: any) => {
+    alert();
   };
 
   return (
