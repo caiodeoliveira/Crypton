@@ -7,22 +7,29 @@ import Footer from "../../atoms/Footer";
 
 const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<number[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
 
   useEffect(() => {
     api
       .get(
-        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=100&price_change_percentage=24h,7d&sparkline=true"
+        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&price_change_percentage=24h,7d&sparkline=true"
       )
       .then((response) => {
         setAllCryptoData(response.data);
         setTotalPages(response.data.length / 20);
+        console.log(response);
       });
   }, [currentPage]);
 
   const handlePagination = (event: any) => {
-    alert();
+    setCurrentPage(event.target.textContent);
+    console.log(event.target.textContent);
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    // currentPage.toString().includes(event.target.textContent)
+    //   ? allCryptoData.length * event.target.textContent
+    //   : console.log("no");
   };
 
   return (
