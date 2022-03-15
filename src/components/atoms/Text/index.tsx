@@ -1,19 +1,25 @@
 import TextProps from "./types";
 import S from "./styles";
 
-const Text = ({ type, children }: TextProps) => {
+const Text = ({ type, children, color, margin }: TextProps) => {
   const selectType = () => {
     switch (type) {
-      case "title":
-        return <S.TitleText>{children}</S.TitleText>;
       case "subtitle":
         return <S.SubTitleText>{children}</S.SubTitleText>;
       case "input_label":
-        return <S.InputLabelText>{children}</S.InputLabelText>;
+        return (
+          <S.InputLabelText style={{ margin: margin }}>
+            {children}
+          </S.InputLabelText>
+        );
       case "footer":
-        return <S.FooterText>{children}</S.FooterText>;
+        return <S.FooterText style={{ color: color }}>{children}</S.FooterText>;
       case "paragraph_text":
-        return <S.CoinPriceLabel>{children}</S.CoinPriceLabel>;
+        return (
+          <S.ParagraphLabelText style={{ color: color }}>
+            {children}
+          </S.ParagraphLabelText>
+        );
     }
   };
   return selectType();

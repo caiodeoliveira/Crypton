@@ -30,28 +30,29 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
     .MuiDrawer-paperAnchorDockedLeft {
     border-right: none !important;
-    }
-    &::-webkit-scrollbar-track {
+  }
+  &::-webkit-scrollbar-track {
         background-color: transparent;
         border-radius: 5px;
-    }
-    &::-webkit-scrollbar {
+      }
+      &::-webkit-scrollbar {
         width: 16px;
         border-radius: 5px;
-        background: #fff;
+        background: black;
     }
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: ${colors.primary};
-        border:4px solid #fff;
+        border:4px solid black;
+      }
+
     }
-  }
-  body {
-    background: ${colors.background};
-    --webkit-font-smoothing: antialiased;
+    body {
+      background: ${colors.background};
+      --webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
   }
   #root, body, html {
     height: 100%;

@@ -3,29 +3,16 @@ import Text from "../../atoms/Text";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
 import HomeUpperAreaProps from "./types";
+import { RiSpaceShipLine } from "react-icons/ri";
 
 const HomeUpperArea = ({}: HomeUpperAreaProps) => {
   const [trendingCoins, setTrendingCoins] = useState<any>([]);
-  const [price, setPrice] = useState<any>([]);
 
   useEffect(() => {
     api
       .get("/search/trending")
       .then((response) => {
-        console.log(response.data);
         setTrendingCoins(response.data.coins);
-      })
-      .catch((err) => {
-        console.log("Ocorreu um erro na requisição !:" + err);
-      });
-  }, []);
-
-  useEffect(() => {
-    api
-      .get("/simple/supported_vs_currencies")
-      .then((response) => {
-        console.log(response);
-        setPrice(response.data);
       })
       .catch((err) => {
         console.log("Ocorreu um erro na requisição !:" + err);
@@ -35,15 +22,19 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
   return (
     <>
       <S.TopContainer>
-        <Text type={"subtitle"}>{"2.0.0"}</Text>
         <S.TrendingContainer>
-          <Text type={"title"}>{"Trending"}</Text>
+          <S.TrendingLeftContainer>
+            <Text type={"subtitle"}>{"Trending"}</Text>
+            {<RiSpaceShipLine size={80} color={"yellow"} />}
+          </S.TrendingLeftContainer>
+
           <S.TrendingCoinsContainer>
             {trendingCoins &&
               trendingCoins.map((crypto: any) => (
                 <S.TrendingCoinsContent>
+                  <Text type={"paragraph_text"}>{crypto.item.score + 1}</Text>
                   <S.TrendingCoins
-                    src={crypto.item.small}
+                    src={crypto.item.thumb}
                     alt="trending cryptos"
                   />
                   <S.TrendingSymbol>
@@ -56,12 +47,15 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
                   </S.TrendingName>
                   <S.TrendingPrice>
                     <Text type={"paragraph_text"}>
-                      {` BTC ${crypto.item.price_btc.toFixed(17)}`}
+                      {` BTC ${crypto.item.price_btc.toFixed(10)}`}
                     </Text>
                   </S.TrendingPrice>
                 </S.TrendingCoinsContent>
               ))}
           </S.TrendingCoinsContainer>
+          <S.TrendingRightContainer>
+            <Text type={"subtitle"}>{"v 2.0.0"}</Text>
+          </S.TrendingRightContainer>
         </S.TrendingContainer>
       </S.TopContainer>
     </>
