@@ -5,7 +5,7 @@ import api from "../../../services/api";
 import HomeUpperAreaProps from "./types";
 import { RiSpaceShipLine } from "react-icons/ri";
 
-const HomeUpperArea = ({}: HomeUpperAreaProps) => {
+const HomeUpperArea = ({ children }: HomeUpperAreaProps) => {
   const [trendingCoins, setTrendingCoins] = useState<any>([]);
 
   useEffect(() => {
@@ -57,6 +57,7 @@ const HomeUpperArea = ({}: HomeUpperAreaProps) => {
             <Text type={"subtitle"}>{"v 2.0.0"}</Text>
           </S.TrendingRightContainer>
         </S.TrendingContainer>
+        {children}
       </S.TopContainer>
     </>
   );
