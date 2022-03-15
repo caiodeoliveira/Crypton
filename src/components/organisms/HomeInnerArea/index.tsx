@@ -13,11 +13,11 @@ const HomeInnerArea = () => {
   useEffect(() => {
     api
       .get(
-        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&price_change_percentage=24h,7d&sparkline=true"
+        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=20&price_change_percentage=24h,7d&sparkline=true"
       )
       .then((response) => {
         setAllCryptoData(response.data);
-        setTotalPages(response.data.length / 20);
+        setTotalPages(response.data.length / 4);
         console.log(response);
       });
   }, [currentPage]);
