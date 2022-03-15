@@ -27,3 +27,6 @@ package-lock.json
 
 /Task.txt
 # assets:
+
+project.json
+README.txt
