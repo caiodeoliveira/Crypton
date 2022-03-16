@@ -2,10 +2,9 @@ import S from "./styles";
 import Text from "../../atoms/Text";
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
-import HomeUpperAreaProps from "./types";
-import { RiSpaceShipLine } from "react-icons/ri";
+import { GiCometSpark } from "react-icons/gi";
 
-const HomeUpperArea = ({ children }: HomeUpperAreaProps) => {
+const HomeUpperArea = () => {
   const [trendingCoins, setTrendingCoins] = useState<any>([]);
 
   useEffect(() => {
@@ -25,7 +24,7 @@ const HomeUpperArea = ({ children }: HomeUpperAreaProps) => {
         <S.TrendingContainer>
           <S.TrendingLeftContainer>
             <Text type={"subtitle"}>{"Trending"}</Text>
-            {<RiSpaceShipLine size={80} color={"yellow"} />}
+            {<GiCometSpark size={80} color={"yellow"} />}
           </S.TrendingLeftContainer>
 
           <S.TrendingCoinsContainer>
@@ -53,11 +52,7 @@ const HomeUpperArea = ({ children }: HomeUpperAreaProps) => {
                 </S.TrendingCoinsContent>
               ))}
           </S.TrendingCoinsContainer>
-          <S.TrendingRightContainer>
-            <Text type={"subtitle"}>{"v 2.0.0"}</Text>
-          </S.TrendingRightContainer>
         </S.TrendingContainer>
-        {children}
       </S.TopContainer>
     </>
   );

@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import bg_medium from "../../../assets/bg_medium.jpg";
+import bg_big from "../../../assets/bg_big.jpg";
 
 const BackgroundCrypto = styled.div`
-  background: url(${bg_medium});
+  background: url(${bg_big});
   background-size: cover;
 `;
 
