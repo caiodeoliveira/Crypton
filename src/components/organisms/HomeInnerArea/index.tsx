@@ -13,7 +13,7 @@ const HomeInnerArea = () => {
   useEffect(() => {
     api
       .get(
-        "coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=20&price_change_percentage=24h,7d&sparkline=true"
+        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=20&price_change_percentage=24h,7d&sparkline=true`
       )
       .then((response) => {
         setAllCryptoData(response.data);
@@ -22,14 +22,11 @@ const HomeInnerArea = () => {
       });
   }, [currentPage]);
 
-  const handlePagination = (event: any) => {
-    setCurrentPage(event.target.textContent);
-    console.log(event.target.textContent);
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    // currentPage.toString().includes(event.target.textContent)
-    //   ? allCryptoData.length * event.target.textContent
-    //   : console.log("no");
+  const handlePagination = async (event: any) => {
+    await setCurrentPage(event.target.textContent);
+    await console.log(event.target.textContent);
+    const totalLength = currentPage * allCryptoData.length;
+    return totalLength;
   };
 
   return (
