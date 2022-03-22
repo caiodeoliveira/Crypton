@@ -1,4 +1,4 @@
-type ButtonTypes = "submit" | "recover_button";
+type ButtonTypes = "submit" | "recover_button" | "scroll";
 
 export default interface ButtonProps {
   id?: string;

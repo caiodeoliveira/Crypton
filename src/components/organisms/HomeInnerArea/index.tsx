@@ -4,30 +4,27 @@ import api from "../../../services/api/index";
 import { useEffect, useState } from "react";
 import Text from "../../atoms/Text";
 import Footer from "../../atoms/Footer";
+import Button from "../../atoms/Button";
 
 const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<number[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(4);
   const [totalPages, setTotalPages] = useState<number>(0);
-
-  useEffect(() => {
-    api
-      .get(
-        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=20&price_change_percentage=24h,7d&sparkline=true`
-      )
-      .then((response) => {
-        setAllCryptoData(response.data);
-        setTotalPages(response.data.length / 4);
-        console.log(response);
-      });
-  }, [currentPage]);
 
   const handlePagination = async (event: any) => {
     await setCurrentPage(event.target.textContent);
     await console.log(event.target.textContent);
-    const totalLength = currentPage * allCryptoData.length;
-    return totalLength;
   };
+  useEffect(() => {
+    api
+      .get(
+        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=10&price_change_percentage=24h,7d&sparkline=true&page=${currentPage}`
+      )
+      .then((response) => {
+        setAllCryptoData(response.data);
+        console.log(response);
+      });
+  }, [currentPage]);
 
   return (
     <>
@@ -106,6 +103,13 @@ const HomeInnerArea = () => {
             </S.CryptoGridContent>
           ))}
         </S.CryptoFlexContainer>
+        {/* {window.screenY > 10 ? (
+          <Button onClick={() => {}} type="scroll">
+            Return to the top
+          </Button>
+        ) : (
+          <></>
+        )} */}
       </S.BackgroundCrypto>
       <Footer
         onClick={handlePagination}

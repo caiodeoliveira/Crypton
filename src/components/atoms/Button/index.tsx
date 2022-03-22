@@ -19,6 +19,12 @@ const Button = ({ type, onClick, disabled, children }: ButtonProps) => {
             <S.LoginButton onClick={onClick}>{children}</S.LoginButton>;
           </>
         );
+      case "scroll":
+        return (
+          <>
+            <S.ScrollBtn onClick={onClick}>{children}</S.ScrollBtn>;
+          </>
+        );
     }
   };
   return selectType();
