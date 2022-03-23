@@ -8,17 +8,20 @@ import Button from "../../atoms/Button";
 
 const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<number[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(4);
-  const [totalPages, setTotalPages] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(12);
+  const [globalData, setGlobalData] = useState<number[]>([]);
 
-  const handlePagination = async (event: any) => {
-    await setCurrentPage(event.target.textContent);
-    await console.log(event.target.textContent);
+  const handlePagination = (event: any) => {
+    setCurrentPage(event.target.textContent);
+    console.log(event.target.textContent);
   };
   useEffect(() => {
     api
       .get(
-        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=10&price_change_percentage=24h,7d&sparkline=true&page=${currentPage}`
+        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=10&price_change_percentage=24h,7d&sparkline=true&page=${
+          currentPage === 8 ? 9 : currentPage
+        }`
       )
       .then((response) => {
         setAllCryptoData(response.data);
