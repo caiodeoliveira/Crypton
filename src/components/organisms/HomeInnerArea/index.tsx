@@ -8,24 +8,22 @@ import Button from "../../atoms/Button";
 
 const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<number[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalPages, setTotalPages] = useState<number>(12);
+  const [currentPage, setCurrentPage] = useState<number>(-1);
+  const [totalPages, setTotalPages] = useState<number>(15);
   const [globalData, setGlobalData] = useState<number[]>([]);
 
   const handlePagination = (event: any) => {
-    setCurrentPage(event.target.textContent);
     console.log(event.target.textContent);
+    setCurrentPage(Number(event.target.textContent));
   };
   useEffect(() => {
     api
       .get(
-        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=10&price_change_percentage=24h,7d&sparkline=true&page=${
-          currentPage === 8 ? 9 : currentPage
-        }`
+        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=10&price_change_percentage=24h,7d&sparkline=true&page=${currentPage}`
       )
       .then((response) => {
         setAllCryptoData(response.data);
-        console.log(response);
+        console.log(response.data);
       });
   }, [currentPage]);
 
