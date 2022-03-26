@@ -4,13 +4,10 @@ import api from "../../../services/api/index";
 import { useEffect, useState } from "react";
 import Text from "../../atoms/Text";
 import Footer from "../../atoms/Footer";
-import Button from "../../atoms/Button";
 
 const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<number[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(-1);
-  const [totalPages, setTotalPages] = useState<number>(15);
-  const [globalData, setGlobalData] = useState<number[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const handlePagination = (event: any) => {
     console.log(event.target.textContent);
@@ -19,13 +16,20 @@ const HomeInnerArea = () => {
   useEffect(() => {
     api
       .get(
-        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=10&price_change_percentage=24h,7d&sparkline=true&page=${currentPage}`
+        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=100&page=${currentPage}&price_change_percentage=24h,7d`
       )
       .then((response) => {
         setAllCryptoData(response.data);
         console.log(response.data);
       });
   }, [currentPage]);
+
+  // useEffect(() => {
+  //   api.get(`coins/list`).then((response) => {
+  //     console.log(response.data);
+  //     setTotalPages(response.data.length / 120);
+  //   });
+  // }, []);
 
   return (
     <>
@@ -112,11 +116,7 @@ const HomeInnerArea = () => {
           <></>
         )} */}
       </S.BackgroundCrypto>
-      <Footer
-        onClick={handlePagination}
-        currentPages={currentPage}
-        totalPages={totalPages}
-      />
+      <Footer onChange={handlePagination} currentPages={currentPage} />
     </>
   );
 };
