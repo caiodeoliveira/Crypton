@@ -14,10 +14,6 @@ const HomeInnerArea = () => {
   const handlePagination = (event: any) => {
     event.preventDefault();
     setCurrentPage(Number(event.target.textContent));
-    console.log(event.target.textContent);
-    console.log(
-      `The total of pages is: ${totalPages} and the type of this data is ${typeof totalPages}`
-    );
   };
   useEffect(() => {
     api
@@ -31,8 +27,7 @@ const HomeInnerArea = () => {
 
   useEffect(() => {
     api.get(`coins/list`).then((response: any) => {
-      setTotalPages(response.data.length / totalPerPage);
-      console.log(response.data.length);
+      setTotalPages((response.data.length / totalPerPage).toFixed(0));
     });
   }, []);
 

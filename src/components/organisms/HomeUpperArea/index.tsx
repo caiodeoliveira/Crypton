@@ -53,7 +53,7 @@ const HomeUpperArea = () => {
               ))}
           </S.TrendingCoinsContainer>
           <S.TrendingRightContainer>
-            <Text type={"subtitle"}>{"v 2.0.0"}</Text>
+            <Text type={"subtitle"}>{"v 1.2.5"}</Text>
           </S.TrendingRightContainer>
         </S.TrendingContainer>
       </S.TopContainer>
