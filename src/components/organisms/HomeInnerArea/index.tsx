@@ -8,28 +8,33 @@ import Footer from "../../atoms/Footer";
 const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<number[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(0);
+  const totalPerPage = 15;
 
   const handlePagination = (event: any) => {
-    console.log(event.target.textContent);
+    event.preventDefault();
     setCurrentPage(Number(event.target.textContent));
+    console.log(event.target.textContent);
+    console.log(
+      `The total of pages is: ${totalPages} and the type of this data is ${typeof totalPages}`
+    );
   };
   useEffect(() => {
     api
       .get(
-        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=100&page=${currentPage}&price_change_percentage=24h,7d`
+        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=${totalPerPage}&page=${currentPage}&price_change_percentage=24h,7d`
       )
       .then((response) => {
         setAllCryptoData(response.data);
-        console.log(response.data);
       });
   }, [currentPage]);
 
-  // useEffect(() => {
-  //   api.get(`coins/list`).then((response) => {
-  //     console.log(response.data);
-  //     setTotalPages(response.data.length / 120);
-  //   });
-  // }, []);
+  useEffect(() => {
+    api.get(`coins/list`).then((response: any) => {
+      setTotalPages(response.data.length / totalPerPage);
+      console.log(response.data.length);
+    });
+  }, []);
 
   return (
     <>
@@ -65,7 +70,9 @@ const HomeInnerArea = () => {
               </Text>
 
               <S.CryptoPrice>
-                <Text type={"footer"}>$ {crypto.current_price.toFixed(2)}</Text>
+                <Text type={"footer"}>
+                  $ {crypto.current_price.toLocaleString("en-US")}
+                </Text>
               </S.CryptoPrice>
 
               <S.CryptoDayStatus>
@@ -95,28 +102,31 @@ const HomeInnerArea = () => {
               </S.CryptoWeekStatus>
 
               <S.CryptoMarketCap>
-                <Text type={"footer"}>$ {crypto.market_cap}</Text>
+                <Text type={"footer"}>
+                  $ {crypto.market_cap.toLocaleString("en-US")}
+                </Text>
               </S.CryptoMarketCap>
 
               <S.CryptoVolume>
-                <Text type={"footer"}>$ {crypto.total_volume}</Text>
+                <Text type={"footer"}>
+                  $ {crypto.total_volume.toLocaleString("en-US")}
+                </Text>
               </S.CryptoVolume>
 
               <S.CryptoSupply>
-                <Text type={"footer"}>{crypto.circulating_supply}</Text>
+                <Text type={"footer"}>
+                  {crypto.circulating_supply.toLocaleString("en-US")}
+                </Text>
               </S.CryptoSupply>
             </S.CryptoGridContent>
           ))}
         </S.CryptoFlexContainer>
-        {/* {window.screenY > 10 ? (
-          <Button onClick={() => {}} type="scroll">
-            Return to the top
-          </Button>
-        ) : (
-          <></>
-        )} */}
       </S.BackgroundCrypto>
-      <Footer onChange={handlePagination} currentPages={currentPage} />
+      <Footer
+        onChange={handlePagination}
+        currentPage={currentPage}
+        totalPages={totalPages}
+      />
     </>
   );
 };

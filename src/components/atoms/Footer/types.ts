@@ -1,4 +1,5 @@
 export interface FooterProps {
-  currentPages: number;
+  totalPages: number;
+  currentPage: number;
   onChange: React.MouseEventHandler<HTMLElement>;
 }
