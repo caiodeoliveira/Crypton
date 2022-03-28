@@ -10,19 +10,13 @@ const Footer = styled.footer`
   justify-content: center;
   width: 100%;
   border-radius: 3px;
-  padding: 7px 14.5px;
+  padding: 2px 14.5px;
   position: fixed;
-  bottom: 0;
-`;
-
-const PaginationContainer = styled.div`
-  position: absolute;
-  right: 20px;
+  bottom: -3px;
 `;
 
 const S = {
   Footer,
-  PaginationContainer,
 };
 
 export default S;
