@@ -8,8 +8,7 @@ import Footer from "../../atoms/Footer";
 const HomeInnerArea = () => {
   const [allCryptoData, setAllCryptoData] = useState<number[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalPages, setTotalPages] = useState<number>(0);
-  const totalPerPage = 15;
+  const [totalPages] = useState<number>(100);
 
   const handlePagination = (event: any) => {
     event.preventDefault();
@@ -18,18 +17,12 @@ const HomeInnerArea = () => {
   useEffect(() => {
     api
       .get(
-        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=${totalPerPage}&page=${currentPage}&price_change_percentage=24h,7d`
+        `coins/markets?vs_currency=usd&order=market_cap_desc,volume_desc&per_page=10&page=${currentPage}&price_change_percentage=24h,7d`
       )
       .then((response) => {
         setAllCryptoData(response.data);
       });
   }, [currentPage]);
-
-  useEffect(() => {
-    api.get(`coins/list`).then((response: any) => {
-      setTotalPages(response.data.length / totalPerPage);
-    });
-  }, []);
 
   return (
     <>

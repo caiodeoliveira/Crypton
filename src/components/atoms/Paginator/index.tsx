@@ -8,6 +8,7 @@ export const Paginator = ({ count, page, onChange }: PaginatorProps) => {
       page={page}
       onChange={onChange}
       variant={"outlined"}
+      showFirstButton
     />
   );
 };
