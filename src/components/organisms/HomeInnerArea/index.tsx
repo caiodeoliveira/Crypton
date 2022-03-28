@@ -27,7 +27,7 @@ const HomeInnerArea = () => {
 
   useEffect(() => {
     api.get(`coins/list`).then((response: any) => {
-      setTotalPages((response.data.length / totalPerPage).toFixed(0));
+      setTotalPages(response.data.length / totalPerPage);
     });
   }, []);
 
