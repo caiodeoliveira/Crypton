@@ -4,6 +4,6 @@
 
 ## Technologies: React & Typescript
 
-## Currently stage of application [V 2.0.0] (01_03_2022): Working on it :construction:
+## Currently stage of application [V 1.2.5] (29_03_2022): 
 
-![Crypton_Screen](https://user-images.githubusercontent.com/59401287/156274769-9608aacc-f0fe-42ec-a1d2-dc6c484d3125.png)
+![image](https://user-images.githubusercontent.com/59401287/160709041-c22c2efa-39d4-4a3a-b4a6-1efc65d835ad.png)
