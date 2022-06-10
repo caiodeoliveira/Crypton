@@ -24,7 +24,7 @@ https://user-images.githubusercontent.com/59401287/173065188-9999bc60-6b42-44ab-
 
 ## Access to the Project:
 
-### crypton-tau.vercel.app
+### <a href="crypton-tau.vercel.app" target="_blank">Go to page in production 🚀</a>
 
 ## A few Technologies and concepts in this project:
 <div>
