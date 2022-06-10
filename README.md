@@ -1,9 +1,9 @@
 # Crypton
 
-# <h1 align="center">:bar_chart: Crypton🪙 </h1>
+# <h1 align="center"> 📄 Crypton🪙 </h1>
 
 <div align="center">
-<img src="https://img.shields.io/badge/Status-In%20Development-green?style=for-the-badge">
+<img src="https://img.shields.io/badge/Status-Interrupted-yellow?style=for-the-badge">
 </div>
   
 * [Project Description](#project-description)  
