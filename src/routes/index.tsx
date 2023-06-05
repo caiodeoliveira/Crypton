@@ -1,12 +1,12 @@
-import { Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "../components/templates/Home";
 
-const Routes = () => {
+export const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <Route path="/home" component={Home} />
+    <Routes>
+      <Route path="/home" element={<Home/>} />
+    </Routes>
     </BrowserRouter>
   );
 };
-
-export default Routes;
