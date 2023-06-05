@@ -1,4 +1,4 @@
-import Pagination from "@material-ui/lab/Pagination";
+import Pagination from "@mui/material/Pagination";
 import { PaginatorProps } from "./types";
 
 export const Paginator = ({ count, page, onChange }: PaginatorProps) => {
