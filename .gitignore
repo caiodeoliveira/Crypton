@@ -21,11 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-yarn.lock
-package.json
-package-lock.json
+
 
 /Task.txt
+/doc_set_up_project_reactjs.txt
 # assets:
 
 project.json
